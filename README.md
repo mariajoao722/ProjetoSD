@@ -1,5 +1,7 @@
 # ProjetoSD
 
+Coloque-se no diretório superior (ProjetoSD/) e compile e run os projetos da seguinte maneira.
+
 ## RING
 
 compilar com o poisson
@@ -49,6 +51,20 @@ Exemplo:
   - ``` java ds.assign.entropy.Injector 12345 12346 12347 12348 12349 12344 ```
 
 ## CHAT 
+
+compilar com o poisson
+`$ javac -cp ds/assign/chat/ ds/assign/chat/*.java`
+
+correr o Peer
+`$ java ds.assign.chat.Peer <ip_peer> <ip_next_peer>'s`
+
+Exemplos:
+  - ``` java ds.assign.entropy.Peer 12345 12346 12347 12348 12349 12344 ```
+  - ``` java ds.assign.entropy.Peer 12346 12345 12347 12348 12349 12344 ```
+  - ``` java ds.assign.entropy.Peer 12347 12346 12345 12348 12349 12344 ```
+  - ``` java ds.assign.entropy.Peer 12348 12346 12349 12344 12345 12347 ```
+  - ``` java ds.assign.entropy.Peer 12349 12348 12345 12347 12346 12344 ```
+  - ``` java ds.assign.entropy.Peer 12344 12348 12346 12347 12345 12349 ```
 
 ### IP Map
 p1 12345 - 12346 12347 12348 12349 12344

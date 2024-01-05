@@ -26,8 +26,6 @@ Exemplo:
 correr Servercalc
 `$ java ds.assign.ring.Servercalc`
 
-
-
 ## ENTROPY
 
 compilar com o poisson
@@ -65,16 +63,3 @@ Exemplos:
   - ``` java ds.assign.entropy.Peer 12348 12346 12349 12344 12345 12347 ```
   - ``` java ds.assign.entropy.Peer 12349 12348 12345 12347 12346 12344 ```
   - ``` java ds.assign.entropy.Peer 12344 12348 12346 12347 12345 12349 ```
-
-### IP Map
-p1 12345 - 12346 12347 12348 12349 12344
-
-p2 12346 - 12345 12347 12348 12349 12344
-
-p3 12347 - 12346 12345 12348 12349 12344
-
-p4 12348 - 12346 12349 12344 12345 12347
-
-p5 12349 - 12348 12345 12347 12346 12344
-
-p6 12344 - 12348 12346 12347 12345 12349

@@ -63,3 +63,13 @@ Exemplos:
   - ``` java -cp .:ds/assign/chat ds.assign.entropy.Peer 12348 12346 12349 12344 12345 12347 ```
   - ``` java -cp .:ds/assign/chat ds.assign.entropy.Peer 12349 12348 12345 12347 12346 12344 ```
   - ``` java -cp .:ds/assign/chat ds.assign.entropy.Peer 12344 12348 12346 12347 12345 12349 ```
+
+
+![image](https://github.com/mariajoao722/ProjetoSD/assets/75786385/71f37503-9657-4ee8-9ed4-fed8935e16c2)
+![image](https://github.com/mariajoao722/ProjetoSD/assets/75786385/87d257d0-7b8b-4b4e-a2ab-42d53e7a3357)
+![image](https://github.com/mariajoao722/ProjetoSD/assets/75786385/9a6c6b05-6cad-48cb-b06a-379c5463b1a9)
+![image](https://github.com/mariajoao722/ProjetoSD/assets/75786385/ab95635d-d69f-4858-88c9-0abf86325588)
+
+
+
+

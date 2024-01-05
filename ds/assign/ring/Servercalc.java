@@ -34,7 +34,7 @@ public class Servercalc {
     }
     
     public static void main(String[] args) throws Exception {
-	Servercalc app = new Servercalc("localhost",55512);
+	Servercalc app = new Servercalc("localhost",12333);
 	System.out.printf("\r\nrunning server: host=%s @ port=%d\n",
 	    app.getSocketAddress().getHostAddress(), app.getPort());
 	app.listen();

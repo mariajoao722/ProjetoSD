@@ -207,7 +207,7 @@ class Connection implements Runnable {
 						String[] parts = input.split(":");
 						mensagens.add(parts[1]);
 						Client.LamportClock++;
-						queue.remove(input);	
+						//queue.remove(input);	
 					}
 					System.out.println(mensagens);
 					

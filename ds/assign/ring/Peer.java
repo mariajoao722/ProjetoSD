@@ -121,7 +121,7 @@ class Connection implements Runnable {
 
 			System.out.println("op1");
 
-			Socket socket  = new Socket(InetAddress.getByName("localhost"), 55512);
+			Socket socket  = new Socket(InetAddress.getByName("localhost"), 12333);
 			logger.info("client: connected to server " + socket.getInetAddress() + "[port = " + socket.getPort() + "]");
 
 			PrintWriter out2 = new PrintWriter(socket.getOutputStream(), true);

@@ -4,7 +4,6 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.logging.Logger;
 import java.util.logging.FileHandler;
@@ -42,7 +41,7 @@ public class Peer {
 		Peer peer = new Peer("localhost");
 		System.out.printf("new peer @ host=%s\n", "localhost");
 		new Thread(new Server("localhost", Integer.parseInt(args[0]), peer.logger,Integer.parseInt(args[1]))).start(); // args[0] port, argq[1] nextport
-		new Thread(new Client("localhost", peer.logger)).start(); // thread para gerar comandos
+		new Thread(new Client()).start(); // thread para gerar comandos
     }
 }
 
@@ -166,16 +165,11 @@ class Connection implements Runnable {
 
 //Class que gera comandos aleatórios e adiciona-os a uma fila
 class Client implements Runnable {
-    String  host;
-    Logger  logger;
-    Scanner scanner;
+
 	static final int SAMPLES = 10;
 	static Queue<String> fila = new LinkedList<>();
     
-    public Client(String host, Logger logger) throws Exception {
-	this.host    = host;
-	this.logger  = logger; 
-	this.scanner = new Scanner(System.in);
+    public Client() throws Exception {
     }
 
     @Override 

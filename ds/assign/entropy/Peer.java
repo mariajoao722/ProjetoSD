@@ -9,29 +9,27 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Logger;
 import java.util.logging.FileHandler;
 import java.util.logging.SimpleFormatter;
 
 import poisson.*;
-
 public class Peer {
     String host;
     Logger logger;
 
     public Peer(String hostname) {
-	host   = hostname;
-	logger = Logger.getLogger("logfile");
-	try {
-	    FileHandler handler = new FileHandler("./" + hostname + "_peer.log", true);
-	    logger.addHandler(handler);
-	    SimpleFormatter formatter = new SimpleFormatter();	
-	    handler.setFormatter(formatter);	
-	} catch ( Exception e ) {
-	     e.printStackTrace();
-	}
+		host   = hostname;
+		logger = Logger.getLogger("logfile");
+		try {
+			FileHandler handler = new FileHandler("./" + hostname + "_peer.log", true);
+			logger.addHandler(handler);
+			SimpleFormatter formatter = new SimpleFormatter();	
+			handler.setFormatter(formatter);	
+		} catch ( Exception e ) {
+			e.printStackTrace();
+		}
     }
     
     public static void main(String[] args) throws Exception {
@@ -74,9 +72,9 @@ public class Peer {
 
 		Peer peer = new Peer("localhost");
 		System.out.printf("new peer @ host=%s\n", "localhost");
-		// args[0] port, peer pode ter até 4 peers ligados
+		// args[0] port, peer pode ter até 5 peers ligados
 		new Thread(new Server("localhost", Integer.parseInt(args[0]), peer.logger, nextport1, nextport2, nextport3, nextport4, nextport5)).start();
-		new Thread(new Client("localhost", peer.logger)).start();
+		new Thread(new Client()).start();
     }
 }
 
@@ -125,7 +123,6 @@ class Server implements Runnable {
 }
 
 // Thread que vai reaizar as operações de push e pull
-// Adicionar forma de ao conectar-se com um peer aleatório ele mandar de volta logo imedatamente a lista de palavras e fazer a comparação
 class Connection implements Runnable {
     String clientAddress;
     Socket clientSocket;
@@ -199,13 +196,13 @@ class Connection implements Runnable {
 			
 			for(String str : commandwords) { // lista de palavras do peer que enviou a mensagem
 				if (str.startsWith("[") && str.endsWith("]")) {
-					// Remove "[" and "]" by replacing them with an empty string
+					// Remove "[" e "]"
 					str = str.replaceAll("^\\[|\\]$", "");
 				} else if (str.startsWith("[")) {
-					// Remove "[" by extracting substring starting from index 1
+					// Remove "[" 
 					str = str.substring(1);
 				} else if (str.endsWith("]")) {
-					// Remove "]" by extracting substring starting from index 0
+					// Remove "]"
 					str = str.substring(0, str.length() - 1);
 				}
 
@@ -259,13 +256,13 @@ class Connection implements Runnable {
 
 			for(String str : commandwords) { // lista de palavras do peer que enviou a mensagem
 				if (str.startsWith("[") && str.endsWith("]")) {
-					// Remove "[" and "]" by replacing them with an empty string
+					// Remove "[" e "]"
 					str = str.replaceAll("^\\[|\\]$", "");
 				} else if (str.startsWith("[")) {
-					// Remove "[" by extracting substring starting from index 1
+					// Remove "[" 
 					str = str.substring(1);
 				} else if (str.endsWith("]")) {
-					// Remove "]" by extracting substring starting from index 0
+					// Remove "]"
 					str = str.substring(0, str.length() - 1);
 				}
 
@@ -303,16 +300,10 @@ class Connection implements Runnable {
 
 // Adicionar palavras aleatórias à lista de palavras
 class Client implements Runnable {
-    String  host;
-    Logger  logger;
-    Scanner scanner;
 	static final int SAMPLES = 100;
 	static List<String> palavrasAleatorias =new ArrayList<String>();
     
-    public Client(String host, Logger logger) throws Exception {
-	this.host    = host;
-	this.logger  = logger; 
-	this.scanner = new Scanner(System.in);
+    public Client() throws Exception {
     }
 
     @Override 

@@ -18,6 +18,9 @@ Exemplos:
 correr Injector
 `$ java ds.assign.ring.Injector <ip_first_peer>`
 
+Exemplo:
+  - ``` java ds.assign.ring.Injector 12345 ```
+
 correr Servercalc
 `$ java ds.assign.ring.Servercalc`
 

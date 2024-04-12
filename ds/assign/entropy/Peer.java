@@ -267,11 +267,11 @@ class Connection implements Runnable {
 				}
 
 				if (copyOfPalavras.contains(str)) {
-					System.out.println(str + " is in the list.");
+					//System.out.println(str + " is in the list.");
 				} else {
-					System.out.println(str + " is not in the list.");
+					//System.out.println(str + " is not in the list.");
 					Client.palavrasAleatorias.add(str);
-					System.out.println("Added to Client.palavrasAleatorias: " + str);
+					//System.out.println("Added to Client.palavrasAleatorias: " + str);
 				}
 			}
 			System.out.println("333332:"+ Client.palavrasAleatorias);

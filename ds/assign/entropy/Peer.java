@@ -207,14 +207,14 @@ class Connection implements Runnable {
 				}
 
 				if (copyOfPalavras.contains(str)) {
-					System.out.println(str + " is in the list.");
+					//System.out.println(str + " is in the list.");
 				} else {
 					System.out.println(str + " is not in the list.");
 					Client.palavrasAleatorias.add(str);
-					System.out.println("Added to Client.palavrasAleatorias: " + str);
+					//System.out.println("Added to Client.palavrasAleatorias: " + str);
 				}
 			}
-			System.out.println("333331:"+ Client.palavrasAleatorias);
+			//System.out.println("333331:"+ Client.palavrasAleatorias);
 		}
 
 		// enviar a lista de palavras para um peer aleatório e desse peer aleatorio mandar o lista de palavras para o peer que enviou a mensagem
@@ -274,7 +274,7 @@ class Connection implements Runnable {
 					//System.out.println("Added to Client.palavrasAleatorias: " + str);
 				}
 			}
-			System.out.println("333332:"+ Client.palavrasAleatorias);
+			//System.out.println("333332:"+ Client.palavrasAleatorias);
 		}
 			out2.flush();
 			socket.close();
